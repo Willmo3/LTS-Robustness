@@ -143,5 +143,26 @@
             <artifactId>kotlinx-coroutines-core</artifactId>
             <version>1.6.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.supremica</groupId>
+            <artifactId>Supremica</artifactId>
+            <version>2.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/waters-linux/Supremica.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.supremica</groupId>
+            <artifactId>SupremicaLib</artifactId>
+            <version>2.7</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/waters-linux/SupremicaLib.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>ltsa</groupId>
+            <artifactId>LTSA</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ltsa.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>
