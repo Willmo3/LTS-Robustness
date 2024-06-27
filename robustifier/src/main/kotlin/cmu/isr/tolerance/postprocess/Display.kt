@@ -145,8 +145,13 @@ fun edgesToErr(delta : Set<Set<Triple<Int, String, Int>>>, env : CompactLTS<Stri
     val Re = ltsTransitions(env)
         .filter { env.isAccepting(it.first) && env.isAccepting(it.third) }
         .toSet()
-    val maxPertSize = delta.map { it.size }.max()
-    val minPertSize = delta.map { it.size }.min()
+
+    // NOTE: Change in function! On my machine, max, min no longer supported
+    // Instead, using supported maxOrNull, minOrNull, and asserting non-null
+    // Will Morris, 6/27/2024
+    val maxPertSize = delta.map { it.size }.maxOrNull()!!
+    val minPertSize = delta.map { it.size }.minOrNull()!!
+
     val minEdgesToErr = minPertSize+1 - Re.size
     println("maxPertSize: $maxPertSize")
     println("minPertSize: $minPertSize")
